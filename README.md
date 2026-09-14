@@ -87,13 +87,17 @@ Bias, MAE y RMSE cuantifican diferencias entre los valores observados y simulado
 
 ### Dirección del viento
 
-Debido a que la dirección es una variable perioda, el error no se calcula mediante una resta convencional, en cambio, se utiliza la diferencia angular mínima:
+Debido a que la dirección es una variable periódica, el error no se calcula mediante una resta convencional, en cambio, se utiliza la diferencia angular mínima:
 
-$\[e_{\theta}=((\theta_{sim}-\theta_{obs}+180)\bmod360)-180\]$
+$$
+e_{\theta}=((\theta_{sim}-\theta_{obs}+180)\bmod 360)-180
+$$
 
 De esta forma, los errores permanecen dentro del intervalo:
 
-$\[-180^\circ,180^\circ]\$
+$$
+[-180^\circ,180^\circ]
+$$
 
 A partir de esta diferencia se calculan Bias, MAE y RMSE angulares.
 
@@ -188,7 +192,7 @@ wind-model-validation/
 └── figures/
     ├── obs_vs_sim.png                     #Gráfica de datos observado vs simulado
     ├── dist_wd.png                        #Distribución del error de dirección
-    ├── error_Ws.png                       #Comparación de MAE entre estaciones
+    ├── error_ws.png                       #Comparación de MAE entre estaciones
     ├── sens_wd.png                        #Resultados post. sensibilidad
     └── serie_temp.png                     #Series temporales graficadas
 ```
