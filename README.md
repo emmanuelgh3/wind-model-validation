@@ -89,17 +89,11 @@ Bias, MAE y RMSE cuantifican diferencias entre los valores observados y simulado
 
 Debido a que la dirección es una variable perioda, el error no se calcula mediante una resta convencional, en cambio, se utiliza la diferencia angular mínima:
 
-\[
-e_{\theta}
-=
-((\theta_{sim}-\theta_{obs}+180)\bmod360)-180
-\]
+$\[e_{\theta}=((\theta_{sim}-\theta_{obs}+180)\bmod360)-180\]$
 
 De esta forma, los errores permanecen dentro del intervalo:
 
-\[
-[-180^\circ,180^\circ]
-\]
+$\[-180^\circ,180^\circ]\$
 
 A partir de esta diferencia se calculan Bias, MAE y RMSE angulares.
 
@@ -150,11 +144,7 @@ La distribución del error angular permite identificar tanto la magnitud como el
 
 La dirección del viento puede presentar una mayor variabilidad bajo condiciones cercanas a calma (vientos con poca velocidad).
 
-Para evaluar este efecto, las métricas direccionales se recalcularon utilizando únicamente observaciones con:
-
-\[
-V_{obs}>2\text{ m/s}
-\]
+Para evaluar este efecto, las métricas direccionales se recalcularon utilizando únicamente observaciones con $$V_{obs}>2\text{ m/s}\$$.
 
 Los resultados fueron:
 
@@ -201,40 +191,6 @@ wind-model-validation/
     ├── error_Ws.png
     ├── sens_wd.png
     └── serie_temp.png
-```
-
-<!-- Modifica los nombres si tus archivos finales son diferentes. -->
-
----
-
-## Reproducibilidad
-
-El flujo de trabajo está dividido en dos etapas.
-
-### 1. Extracción
-
-El script:
-
-```text
-scripts/01_extract_wrf_wind.py
-```
-
-extrae velocidad y dirección del viento provenientes de la simulación para las coordenadas correspondientes a las estaciones de monitoreo y genera un archivo csv.
-
-### 2. Validación
-
-El notebook:
-
-```text
-notebooks/02_wind_model_validation.ipynb
-```
-
-Es donde se realiza la totalidad del analisis: preparación de observaciones y simulaciones, control de calidad, alineación temporal, cálculo de cobertura, métricas de velocidad y dirección, comparación entre estaciones, visualizaciones de diagnóstico y análisis de sensibilidad.
-
-Las dependencias necesarias se encuentran en:
-
-```text
-requirements.txt
 ```
 
 
