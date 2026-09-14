@@ -171,26 +171,26 @@ La dirección del viento representa el principal desafío de la validación. La 
 wind-model-validation/
 │
 ├── README.md
-├── requirements.txt
+├── requirements.txt                       #Bibliotecas necesarias y versiones
 ├── .gitignore
 │
 ├── scripts/
-│   └── 01_extract_wrf_wind.py
+│   └── 01_extract_wrf_wind.py             #Script de extracción
 │
 ├── notebooks/
-│   └── 02_wind_model_validation.ipynb
+│   └── 02_wind_model_validation.ipynb     #Notebook de análisis
 │
 ├── data/
 │   └── sample/
-│       ├── ramm_sample.csv
-│       └── sim_sample.csv
+│       ├── ramm_sample.csv                #Muestra del csv de observaciones
+│       └── sim_sample.csv                 #Muestra del csv de la simulación
 │
 └── figures/
-    ├── obs_vs_sim.png
-    ├── dist_wd.png
-    ├── error_Ws.png
-    ├── sens_wd.png
-    └── serie_temp.png
+    ├── obs_vs_sim.png                     #Gráfica de datos observado vs simulado
+    ├── dist_wd.png                        #Distribución del error de dirección
+    ├── error_Ws.png                       #Comparación de MAE entre estaciones
+    ├── sens_wd.png                        #Resultados post. sensibilidad
+    └── serie_temp.png                     #Series temporales graficadas
 ```
 
 
